@@ -42,7 +42,7 @@
     </fieldset>
 
     <section class="estimate" aria-labelledby="estimate-title">
-      <h2 id="estimate-title">Пример пополнения</h2>
+      <h2 id="estimate-title">Сколько в рублях?</h2>
       <div class="estimate-values">
         <label class="estimate-value" for="amount">
           <span>На карту</span>
@@ -52,12 +52,12 @@
           </span>
         </label>
         <div class="estimate-value result">
-          <label for="estimate-result">К оплате</label>
-          <output id="estimate-result" for="amount" aria-live="polite">1 900 ₽</output>
+          <label for="estimate-result">В рублях</label>
+          <output id="estimate-result" for="amount" aria-live="polite">—</output>
         </div>
       </div>
       <p class="calc-error" id="calc-error" hidden>Введите сумму от 0,01 до 9 999,99 доллара.</p>
-      <p class="calc-note" id="calc-note">Демонстрационный курс 95 ₽ за $1. Комиссии и выпуск карты в расчёт не входят.</p>
+      <p class="calc-note" id="calc-note"><span id="reference-rate">Курс ЦБ</span>. Ориентир без комиссии.</p>
     </section>
 
     <footer class="app-footer">
