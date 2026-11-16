@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="noindex">
+  <title>Плати отсюда — выбор карты</title>
+  <link rel="stylesheet" href="./app.css">
+  <script src="https://telegram.org/js/telegram-web-app.js?65" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <p class="wordmark">Плати отсюда</p>
+      <p class="app-status"><span></span>Предпросмотр</p>
+    </header>
+
+    <section class="intro" aria-labelledby="app-title">
+      <img class="card-preview" src="../card-isolated.webp" width="1050" height="657" alt="Графитовая виртуальная карта «Плати отсюда»">
+      <h1 id="app-title">Выберите карту</h1>
+      <p>Подберите карту для зарубежных подписок, покупок или поездок.</p>
+    </section>
+
+    <fieldset class="plan-picker">
+      <legend class="sr-only">Назначение карты</legend>
+      <label class="plan">
+        <input type="radio" name="plan" value="online" checked>
+        <span>
+          <strong>Для подписок</strong>
+          <small>Онлайн-сервисы и цифровые покупки</small>
+        </span>
+      </label>
+      <label class="plan">
+        <input type="radio" name="plan" value="travel">
+        <span>
+          <strong>Для поездок</strong>
+          <small>Билеты, отели и покупки за границей</small>
+        </span>
+      </label>
+    </fieldset>
+
+    <section class="estimate" aria-labelledby="estimate-title">
+      <h2 id="estimate-title">Пример пополнения</h2>
+      <div class="estimate-values">
+        <label class="estimate-value" for="amount">
+          <span>На карту</span>
+          <span class="amount-row">
+            <input id="amount" type="text" inputmode="decimal" value="20" maxlength="11" autocomplete="off" aria-describedby="calc-note calc-error">
+            <span class="currency" aria-label="доллары США">USD</span>
+          </span>
+        </label>
+        <div class="estimate-value result">
+          <label for="estimate-result">К оплате</label>
+          <output id="estimate-result" for="amount" aria-live="polite">1 900 ₽</output>
+        </div>
+      </div>
+      <p class="calc-error" id="calc-error" hidden>Введите сумму от 0,01 до 9 999,99 доллара.</p>
+      <p class="calc-note" id="calc-note">Демонстрационный курс 95 ₽ за $1. Комиссии и выпуск карты в расчёт не входят.</p>
+    </section>
+
+    <footer class="app-footer">
+      <button type="button" disabled aria-describedby="availability">Выпуск готовится</button>
+      <p id="availability">Выпуск карт пока недоступен. Условия появятся здесь до запуска.</p>
+    </footer>
+  </main>
+</body>
+</html>
