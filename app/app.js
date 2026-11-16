@@ -24,6 +24,16 @@
   const query = new URLSearchParams(location.search);
   const selected = query.get('plan') ?? query.get('tgWebAppStartParam');
   if (selected === 'travel') document.querySelector('[name="plan"][value="travel"]').checked = true;
+  const service = query.get('service')?.trim();
+  if (service && service.length <= 60) {
+    const purchase = document.querySelector('#selected-purchase');
+    purchase.textContent = `Выбранный сервис: ${service}`;
+    purchase.hidden = false;
+  }
+  const startingAmount = query.get('amount');
+  if (startingAmount && /^\d{1,4}(?:\.\d{1,2})?$/.test(startingAmount) && Number(startingAmount) > 0) {
+    input.value = startingAmount.replace('.', ',');
+  }
 
   input.addEventListener('input', updateEstimate);
   updateEstimate();
